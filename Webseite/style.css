@@ -1,0 +1,1054 @@
+/* =============================================
+   RESET & BASIS
+   ============================================= */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #1A1A1A;
+    background: #FFFFFF;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* =============================================
+   NAVIGATION
+   ============================================= */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 70px;
+    background: transparent;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Nav wird weiß sobald man scrollt */
+#navbar.scrolled {
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Logo: schwarz-weiß PNG — über dunklem Hero weiß, nach Scrollen normal */
+.nav-logo img {
+    height: 38px;
+    width: auto;
+    filter: invert(1);
+    transition: filter 0.4s ease;
+}
+
+#navbar.scrolled .nav-logo img {
+    filter: invert(0);
+}
+
+/* Navigationslinks */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 36px;
+}
+
+.nav-link {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 0.3s ease, opacity 0.3s ease;
+    position: relative;
+}
+
+/* Unterstrich-Animation beim Hover */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+#navbar.scrolled .nav-link {
+    color: #1A1A1A;
+}
+
+/* Hamburger-Menü (nur auf Mobile sichtbar) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 10;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+#navbar.scrolled .hamburger span {
+    background: #1A1A1A;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =============================================
+   HERO — Vollbild-Bildwechsler
+   ============================================= */
+#hero {
+    position: relative;
+    width: 100%;
+    height: 100svh; /* svh = besser auf Mobile (berücksichtigt Adressleiste) */
+    overflow: hidden;
+}
+
+/* Jedes Bild überlagert das andere, nur das aktive ist sichtbar */
+/* =============================================
+   FILMSTREIFEN — Kino-Band Effekt
+   ============================================= */
+
+/* Äußerer Container — leicht geneigt für den Kino-Look */
+.filmstrip {
+    position: absolute;
+    /* etwas größer als der Hero damit die Ränder bei Rotation nicht sichtbar sind */
+    inset: -8%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transform: rotate(-4deg) scale(1.08);
+    transform-origin: center center;
+}
+
+/* Eine horizontale Reihe */
+.strip {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    min-height: 0;
+}
+
+/* Die bewegliche Schiene innerhalb der Reihe */
+.strip-track {
+    display: flex;
+    gap: 4px;
+    width: max-content;
+    height: 100%;
+    animation: strip-left 38s linear infinite;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Reihe 2 läuft in die Gegenrichtung */
+.strip--reverse .strip-track {
+    animation: strip-right 44s linear infinite;
+}
+
+/* Reihe 3 läuft langsamer (anderer Rhythmus = organischer Effekt) */
+.strip-track--slow {
+    animation-duration: 52s;
+}
+
+/* Einzelnes Foto im Filmstreifen — natürliches Seitenverhältnis */
+.strip-item {
+    flex-shrink: 0;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+}
+
+.strip-item img {
+    height: 100%;
+    width: auto;      /* natürliche Breite: Hochformat = schmal, Querformat = breit */
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+/* Interaktiv: Streifen pausieren beim Drüberfahren */
+.filmstrip:hover .strip-track {
+    animation-play-state: paused;
+}
+
+/* Nahtlose Endlosschleife — die zweite Hälfte der Fotos ist identisch zur ersten */
+@keyframes strip-left {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+@keyframes strip-right {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
+}
+
+/* Dunkler Schleier damit Logo und Text lesbar bleiben */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.52) 0%,
+        rgba(0, 0, 0, 0.22) 40%,
+        rgba(0, 0, 0, 0.22) 60%,
+        rgba(0, 0, 0, 0.58) 100%
+    );
+    z-index: 1;
+}
+
+/* Logo und Tagline in der Mitte */
+.hero-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-logo {
+    width: min(360px, 62vw);
+    height: auto;
+    /* invert: schwarz→weiß | drop-shadow: weißer Leuchteffekt */
+    filter: invert(1) drop-shadow(0 0 32px rgba(255, 255, 255, 0.5));
+    user-select: none;
+}
+
+.hero-tagline {
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Pfeil-Animation nach unten */
+.hero-scroll-hint {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.65);
+    animation: bounce 2.2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(10px); }
+}
+
+/* =============================================
+   SECTIONS — Gemeinsame Stile
+   ============================================= */
+.section {
+    padding: 100px 40px;
+    content-visibility: auto;       /* Browser rendert nur sichtbare Abschnitte */
+    contain-intrinsic-size: 0 600px; /* geschätzte Höhe für Layout-Berechnung */
+}
+
+.section--gray {
+    background: #F7F7F7;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.section-title {
+    font-size: clamp(26px, 4vw, 42px);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: #1A1A1A;
+}
+
+.section-subtitle {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #888888;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+/* =============================================
+   HIGHLIGHTS
+   ============================================= */
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.highlight-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    cursor: pointer;
+    background: #E8E8E8;
+}
+
+.highlight-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.highlight-item:hover img {
+    transform: scale(1.06);
+}
+
+/* Label erscheint beim Drüberfahren */
+.highlight-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 48px 16px 16px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.highlight-item:hover .highlight-label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   FEED — Neueste Aufnahmen
+   ============================================= */
+.feed {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
+
+.feed-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+/* Umgekehrte Reihenfolge (Bild rechts) */
+.feed-item--reverse .feed-image {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.feed-item--reverse .feed-text {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.feed-image {
+    overflow: hidden;
+    aspect-ratio: 3 / 2;
+    background: #E8E8E8;
+}
+
+.feed-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.feed-image:hover img {
+    transform: scale(1.04);
+}
+
+.feed-date {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #888888;
+}
+
+.feed-title {
+    margin-top: 14px;
+    font-size: clamp(18px, 2.2vw, 26px);
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+}
+
+.feed-description {
+    margin-top: 16px;
+    font-size: 15px;
+    color: #555555;
+    line-height: 1.85;
+    font-weight: 300;
+}
+
+.feed-link {
+    display: inline-block;
+    margin-top: 28px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1A1A1A;
+    border-bottom: 1px solid #1A1A1A;
+    padding-bottom: 3px;
+    transition: opacity 0.25s ease;
+}
+
+.feed-link:hover {
+    opacity: 0.5;
+}
+
+/* =============================================
+   GALERIE
+   ============================================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3 / 2;
+    cursor: pointer;
+    background: #E8E8E8;
+}
+
+/* Breite Karte nimmt volle Breite ein */
+.gallery-card--wide {
+    grid-column: span 2;
+    aspect-ratio: 16 / 7;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.04);
+}
+
+.gallery-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.4s ease;
+}
+
+.gallery-card:hover .gallery-card-overlay {
+    background: rgba(0, 0, 0, 0.42);
+}
+
+.gallery-card-title {
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.gallery-card-btn {
+    margin-top: 16px;
+    padding: 10px 26px;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s, background 0.2s ease, color 0.2s ease;
+}
+
+.gallery-card-btn:hover {
+    background: white;
+    color: #1A1A1A;
+}
+
+.gallery-card:hover .gallery-card-title,
+.gallery-card:hover .gallery-card-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   ÜBER MICH
+   ============================================= */
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.about-image {
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background: #E8E8E8;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text h3 {
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 15px;
+    color: #444444;
+    line-height: 1.9;
+    font-weight: 300;
+    margin-bottom: 16px;
+}
+
+/* =============================================
+   KONTAKT
+   ============================================= */
+.contact-content {
+    display: flex;
+    justify-content: center;
+}
+
+.instagram-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 44px;
+    border: 1.5px solid #1A1A1A;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: #1A1A1A;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.instagram-btn:hover {
+    background: #1A1A1A;
+    color: white;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 11px;
+    color: #AAAAAA;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-top: 1px solid #EFEFEF;
+}
+
+/* =============================================
+   LIGHTBOX — Vollbild-Fotoansicht
+   ============================================= */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.94);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Wrapper um Bild + Wasserzeichen — schrumpft auf Bildgröße */
+.lightbox-photo-wrapper {
+    position: relative;
+    line-height: 0;
+    max-width: 90vw;
+    max-height: 88vh;
+}
+
+#lightbox-img {
+    display: block;
+    max-width: 90vw;
+    max-height: 88vh;
+    object-fit: contain;
+    user-select: none;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 26px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s ease;
+    padding: 8px;
+}
+
+.lightbox-close:hover { color: white; }
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 52px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 20px 16px;
+    transition: color 0.2s ease;
+    user-select: none;
+}
+
+.lightbox-prev { left: 10px; }
+.lightbox-next { right: 10px; }
+.lightbox-prev:hover,
+.lightbox-next:hover { color: white; }
+
+.lightbox-watermark {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    width: 80px;
+    height: auto;
+    filter: invert(1);
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* =============================================
+   SESSION-SEITEN (sessions/fussball-1.html usw.)
+   ============================================= */
+
+/* Nav ist auf Session-Seiten immer weiß (kein Hero darunter) */
+.session-page #navbar {
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.07);
+}
+
+.session-page #navbar .nav-logo img {
+    filter: invert(0);
+}
+
+.session-page #navbar .nav-link {
+    color: #1A1A1A;
+}
+
+.session-page #navbar .hamburger span {
+    background: #1A1A1A;
+}
+
+.session-header {
+    padding: 140px 40px 60px;
+    text-align: center;
+    border-bottom: 1px solid #EFEFEF;
+    margin-bottom: 12px;
+}
+
+.session-back {
+    display: inline-block;
+    margin-bottom: 32px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #888888;
+    transition: color 0.2s ease;
+}
+
+.session-back:hover { color: #1A1A1A; }
+
+.session-title {
+    font-size: clamp(28px, 5vw, 54px);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+}
+
+.session-meta {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #888888;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+
+.session-description {
+    margin-top: 20px;
+    font-size: 15px;
+    color: #555555;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+/* Foto-Raster auf Session-Seiten */
+.session-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 240px; /* Grundhöhe einer Reihe */
+    gap: 8px;
+    padding: 20px 40px 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.session-photo {
+    overflow: hidden;
+    cursor: pointer;
+    position: relative; /* nötig damit ::after richtig positioniert wird */
+}
+
+/* Hochformat-Fotos — automatisch erkannt per JS, spannen 2 Reihen */
+.session-photo--portrait {
+    grid-row: span 2;
+}
+
+.session-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.session-photo:hover img {
+    transform: scale(1.03);
+}
+
+/* Wasserzeichen — Logo wird automatisch auf jedes Foto gelegt */
+.session-photo::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 80px;
+    height: 40px;
+    background-image: url('logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    filter: invert(1) opacity(0.45);
+    pointer-events: none; /* Klick geht durch zum Foto/Lightbox */
+    z-index: 2;
+}
+
+/* =============================================
+   ALLE AUFNAHMEN — Vollständige Feed-Seite
+   ============================================= */
+.alle-aufnahmen-feed {
+    padding: 20px 40px 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .alle-aufnahmen-feed {
+        padding: 20px 20px 60px;
+    }
+}
+
+/* =============================================
+   SCROLL-ANIMATION — Elemente gleiten beim Scrollen ein
+   ============================================= */
+.fade-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   TABLET (max-width: 1024px)
+   ============================================= */
+@media (max-width: 1024px) {
+    .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .session-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+    }
+
+    .feed-item {
+        gap: 40px;
+    }
+}
+
+/* =============================================
+   MOBILE (max-width: 768px)
+   ============================================= */
+@media (max-width: 768px) {
+
+    /* Nav */
+    #navbar {
+        padding: 0 20px;
+        height: 60px;
+    }
+
+    .nav-logo img {
+        height: 30px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .nav-links.open {
+        max-height: 380px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 16px;
+        color: #1A1A1A !important;
+        font-size: 13px;
+        border-bottom: 1px solid #F2F2F2;
+    }
+
+    .nav-link::after { display: none; }
+
+    /* Sections */
+    .section {
+        padding: 70px 20px;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    /* Filmstreifen auf Mobile: weniger Neigung */
+    .filmstrip {
+        transform: rotate(-2deg) scale(1.06);
+        gap: 3px;
+    }
+
+    .strip-track {
+        gap: 3px;
+        animation-duration: 22s;
+    }
+
+    .strip--reverse .strip-track {
+        animation-duration: 26s;
+    }
+
+    .strip-track--slow {
+        animation-duration: 30s;
+    }
+
+    /* Highlights: 2 Spalten auf Mobile */
+    .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+    /* Feed: gestapelt */
+    .feed {
+        gap: 56px;
+    }
+
+    .feed-item {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Reihenfolge zurücksetzen für Mobile (Bild immer oben) */
+    .feed-item--reverse .feed-image {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .feed-item--reverse .feed-text {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    /* Galerie: 1 Spalte */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .gallery-card--wide {
+        grid-column: span 1;
+        aspect-ratio: 3 / 2;
+    }
+
+    /* About: gestapelt */
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .about-image {
+        aspect-ratio: 3 / 2;
+    }
+
+    /* Galerie-Overlay auf Mobile immer sichtbar (kein Hover auf Touch) */
+    .gallery-card-overlay {
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery-card-title,
+    .gallery-card-btn {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Session */
+    .session-header {
+        padding: 90px 20px 40px;
+    }
+
+    .session-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 150px;
+        gap: 6px;
+        padding: 16px 20px 60px;
+    }
+
+    /* Lightbox Pfeile enger */
+    .lightbox-prev { left: 4px; padding: 12px 8px; }
+    .lightbox-next { right: 4px; padding: 12px 8px; }
+
+    /* Instagram Button */
+    .instagram-btn {
+        padding: 16px 28px;
+        font-size: 12px;
+    }
+}
+
+/* =============================================
+   SEHR KLEINE SCREENS (max-width: 400px)
+   ============================================= */
+@media (max-width: 400px) {
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+}

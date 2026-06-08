@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smjk.photos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="#hero" class="nav-logo">
+            <img src="logo.png" alt="smjk.photos">
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#highlights" class="nav-link">Highlights</a></li>
+            <!-- Neuestes → führt zur vollständigen Aufnahmen-Seite -->
+            <li><a href="alle-aufnahmen.html" class="nav-link">Neuestes</a></li>
+            <li><a href="#galerie" class="nav-link">Galerie</a></li>
+            <li><a href="#ueber-mich" class="nav-link">Über mich</a></li>
+            <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- =============================================
+         HERO — Kino-Band
+         =============================================
+         ANPASSEN: src-Pfade tauschen gegen andere Fotos.
+         Pro Reihe: erste 9 Fotos = zweite 9 Fotos (identisch)
+         damit die Schleife nahtlos wirkt.
+         Hochformat-Fotos erscheinen automatisch schmal,
+         Querformat-Fotos automatisch breit.
+         ============================================= -->
+    <section id="hero">
+        <div class="filmstrip">
+
+            <!-- REIHE 1 — bewegt sich nach links -->
+            <div class="strip">
+                <div class="strip-track">
+                    <div class="strip-item"><img src="bilder/hero/1M3A0444.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Austria Torjubel in Graz.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Eileen Campbell.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/hero/1M3A0975.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Beate Meinl-Reisinger.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Österreich Fans.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/hero/1M3A2510.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Wiener Sport-Club Platz.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Christian Stocker.jpg" alt=""></div>
+                    <!-- Duplikate für nahtlose Endlosschleife -->
+                    <div class="strip-item"><img src="bilder/hero/1M3A0444.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Austria Torjubel in Graz.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Eileen Campbell.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/hero/1M3A0975.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Beate Meinl-Reisinger.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Österreich Fans.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/hero/1M3A2510.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Wiener Sport-Club Platz.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Christian Stocker.jpg" alt=""></div>
+                </div>
+            </div>
+
+            <!-- REIHE 2 — bewegt sich nach rechts -->
+            <div class="strip strip--reverse">
+                <div class="strip-track">
+                    <div class="strip-item"><img src="bilder/hero/1M3A3804.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Kathi Naschenweng.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/hero/1M3A4646.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Abu Barry.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/hero/1M3A4758.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Walter Rosenkranz.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/hero/20260112_4331.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Austria Torjubel in Ried.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/PolEdu.jpg" alt=""></div>
+                    <!-- Duplikate -->
+                    <div class="strip-item"><img src="bilder/hero/1M3A3804.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Kathi Naschenweng.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/hero/1M3A4646.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Abu Barry.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/hero/1M3A4758.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Walter Rosenkranz.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/hero/20260112_4331.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Austria Torjubel in Ried.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/PolEdu.jpg" alt=""></div>
+                </div>
+            </div>
+
+            <!-- REIHE 3 — bewegt sich nach links, langsamer -->
+            <div class="strip">
+                <div class="strip-track strip-track--slow">
+                    <div class="strip-item"><img src="bilder/highlights/Florian Wustinger.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Louise Schöffe, Österreich.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Sturm - Austria Wien.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Christian Stocker und Pascal Günsberg.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Beate Meinl-Reisinger_.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Kathi Naschenweng_.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/PolEdu_.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Christian Stocker_.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Dominik Fitz.png" alt=""></div>
+                    <!-- Duplikate -->
+                    <div class="strip-item"><img src="bilder/highlights/Florian Wustinger.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Louise Schöffe, Österreich.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Sturm - Austria Wien.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Christian Stocker und Pascal Günsberg.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Beate Meinl-Reisinger_.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Kathi Naschenweng_.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/PolEdu_.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Christian Stocker_.jpg" alt=""></div>
+                    <div class="strip-item"><img src="bilder/highlights/Dominik Fitz.png" alt=""></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="smjk.photos" class="hero-logo">
+            <p class="hero-tagline">Samuel Jamöck</p>
+        </div>
+
+        <a href="#highlights" class="hero-scroll-hint" aria-label="Nach unten scrollen">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- =============================================
+         HIGHLIGHTS
+         =============================================
+         ANPASSEN: Fotos und Labels tauschen.
+         Ziel: immer ein Mix aus allen Kategorien.
+         ============================================= -->
+    <section id="highlights" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Highlights</h2>
+            <p class="section-subtitle">Eine kleine Auswahl</p>
+        </div>
+        <div class="highlights-grid">
+            <div class="highlight-item">
+                <img src="bilder/highlights/Austria Torjubel in Ried.jpg" alt="Österreich Frauen Fußball" loading="lazy">
+                <div class="highlight-label">Österreich Frauen · Fußball</div>
+            </div>
+            <div class="highlight-item">
+                <img src="bilder/highlights/Beate Meinl-Reisinger.jpg" alt="Beate Meinl-Reisinger bei PolEdu" loading="lazy">
+                <div class="highlight-label">Beate Meinl-Reisinger · PolEdu</div>
+            </div>
+            <div class="highlight-item">
+                <img src="bilder/highlights/Eileen Campbell.jpg" alt="Eileen Campbell" loading="lazy">
+                <div class="highlight-label">Eileen Campbell · Fußball</div>
+            </div>
+            <div class="highlight-item">
+                <img src="bilder/highlights/Christian Stocker.jpg" alt="Christian Stocker bei PolEdu" loading="lazy">
+                <div class="highlight-label">Christian Stocker · PolEdu</div>
+            </div>
+            <div class="highlight-item">
+                <img src="bilder/highlights/Österreich Fans.jpg" alt="Österreich Fans" loading="lazy">
+                <div class="highlight-label">Österreich Fans · Fußball</div>
+            </div>
+            <div class="highlight-item">
+                <img src="bilder/highlights/Walter Rosenkranz.jpg" alt="Walter Rosenkranz" loading="lazy">
+                <div class="highlight-label">Walter Rosenkranz · Politik</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         NEUESTE AUFNAHMEN — Teaser (3 aktuellste)
+         =============================================
+         "Alle ansehen" → alle-aufnahmen.html
+         ============================================= -->
+    <section id="neuestes" class="section section--gray">
+        <div class="section-header">
+            <h2 class="section-title">Neueste Aufnahmen</h2>
+            <p class="section-subtitle">Was ich zuletzt fotografiert habe</p>
+        </div>
+        <div class="feed">
+
+            <!-- SESSION: Christian Stocker bei PolEdu (April 2026) -->
+            <article class="feed-item">
+                <div class="feed-image">
+                    <!--
+                        BILDAUSSCHNITT ANPASSEN:
+                        Füge style="object-position: X Y;" hinzu um den Ausschnitt zu wählen.
+                        Beispiele:
+                          object-position: center top    → zeigt oberen Bereich
+                          object-position: center 20%    → 20% von oben
+                          object-position: center bottom → zeigt unteren Bereich
+                    -->
+                   <img src="bilder/sessions/session-politik-2/1M3A3845.jpg" alt="Christian Stocker bei PolEdu" loading="lazy" style="object-position:center 80%">
+                </div>
+                <div class="feed-text">
+                    <span class="feed-date">20. April 2026</span>
+                    <h3 class="feed-title">Politik · Christian Stocker bei PolEdu</h3>
+                    <p class="feed-description">
+                        Schreib hier ein paar Sätze über diese Veranstaltung.
+                    </p>
+                    <a href="sessions/politik-2.html" class="feed-link">Alle Fotos ansehen →</a>
+                </div>
+            </article>
+
+            <!-- SESSION: Beate Meinl-Reisinger bei PolEdu (Januar 2026) -->
+            <article class="feed-item feed-item--reverse">
+                <div class="feed-image">
+                    <img src="bilder/sessions/session-politik-1/20260112_4545.jpg" alt="Beate Meinl-Reisinger bei PolEdu" loading="lazy">
+                </div>
+                <div class="feed-text">
+                    <span class="feed-date">12. Januar 2026</span>
+                    <h3 class="feed-title">Politik · Beate Meinl-Reisinger bei PolEdu</h3>
+                    <p class="feed-description">
+                        Schreib hier ein paar Sätze über diese Veranstaltung.
+                    </p>
+                    <a href="sessions/politik-1.html" class="feed-link">Alle Fotos ansehen →</a>
+                </div>
+            </article>
+
+            <!-- SESSION: Österreich Frauen vs. Slowenien Frauen -->
+            <article class="feed-item">
+                <div class="feed-image">
+                    <img src="bilder/sessions/session-fussball-1/1M3A0504.jpg" alt="Österreich Frauen vs. Slowenien Frauen" loading="lazy">
+                </div>
+                <div class="feed-text">
+                    <span class="feed-date">5. Juni 2025</span>
+                    <h3 class="feed-title">Fußball · Österreich Frauen vs. Slowenien Frauen</h3>
+                    <p class="feed-description">
+                        Wiener Sport-Club Platz. Schreib hier ein paar Sätze über dieses Spiel.
+                    </p>
+                    <a href="sessions/fussball-1.html" class="feed-link">Alle Fotos ansehen →</a>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Link zur vollständigen Übersicht -->
+        <div style="text-align: center; margin-top: 64px;">
+            <a href="alle-aufnahmen.html" class="feed-link" style="font-size: 13px;">Alle Aufnahmen ansehen →</a>
+        </div>
+    </section>
+
+    <!-- =============================================
+         GALERIE
+         ============================================= -->
+    <section id="galerie" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Galerie</h2>
+            <p class="section-subtitle">Alle Sessions im Überblick</p>
+        </div>
+        <div class="gallery-grid">
+
+            <div class="gallery-card gallery-card--wide">
+                <img src="bilder/sessions/session-fussball-1/1M3A0928.jpg" alt="Österreich Frauen vs. Slowenien Frauen" loading="lazy" style="object-position: center 20%">
+                <div class="gallery-card-overlay">
+                    <h3 class="gallery-card-title">Österreich Frauen vs. Slowenien Frauen</h3>
+                    <a href="sessions/fussball-1.html" class="gallery-card-btn">Alle Fotos ansehen</a>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="bilder/sessions/session-politik-1/20260112_4346.jpg" alt="Beate Meinl-Reisinger bei PolEdu" loading="lazy">
+                <div class="gallery-card-overlay">
+                    <h3 class="gallery-card-title">Beate Meinl-Reisinger · PolEdu</h3>
+                    <a href="sessions/politik-1.html" class="gallery-card-btn">Alle Fotos ansehen</a>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="bilder/sessions/session-politik-2/1M3A3889.jpg" alt="Christian Stocker bei PolEdu" loading="lazy">
+                <div class="gallery-card-overlay">
+                    <h3 class="gallery-card-title">Christian Stocker · PolEdu</h3>
+                    <a href="sessions/politik-2.html" class="gallery-card-btn">Alle Fotos ansehen</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =============================================
+         ÜBER MICH
+         ============================================= -->
+    <section id="ueber-mich" class="section section--gray">
+        <div class="section-header">
+            <h2 class="section-title">Über mich</h2>
+        </div>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="bilder/ich.jpg" alt="Samuel Jamöck">
+            </div>
+            <div class="about-text">
+                <h3>Samuel Jamöck</h3>
+                <p>
+                    Hey, mein Name ist Samuel
+                    
+                </p>
+                <p>
+                    
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         KONTAKT
+         ============================================= -->
+    <section id="kontakt" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Kontakt</h2>
+            <p class="section-subtitle">Schreib mir auf Instagram</p>
+        </div>
+        <div class="contact-content">
+            <a href="https://www.instagram.com/smjk.photos" target="_blank" rel="noopener" class="instagram-btn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                @smjk.photos auf Instagram
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 smjk.photos</p>
+    </footer>
+
+    <div id="lightbox" class="lightbox" role="dialog" aria-label="Fotoansicht">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Schließen">✕</button>
+        <button class="lightbox-prev" id="lightbox-prev" aria-label="Vorheriges Foto">&#8249;</button>
+        <button class="lightbox-next" id="lightbox-next" aria-label="Nächstes Foto">&#8250;</button>
+        <img src="" alt="" id="lightbox-img">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

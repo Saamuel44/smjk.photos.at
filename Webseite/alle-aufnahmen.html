@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alle Aufnahmen · smjk.photos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="session-page">
+
+    <nav id="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="logo.png" alt="smjk.photos">
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html#highlights" class="nav-link">Highlights</a></li>
+            <li><a href="alle-aufnahmen.html" class="nav-link">Neuestes</a></li>
+            <li><a href="index.html#galerie" class="nav-link">Galerie</a></li>
+            <li><a href="index.html#ueber-mich" class="nav-link">Über mich</a></li>
+            <li><a href="index.html#kontakt" class="nav-link">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="session-header">
+        <a href="index.html" class="session-back">← Zurück zur Startseite</a>
+        <h1 class="session-title">Alle Aufnahmen</h1>
+        <p class="session-meta">Chronologisch · neu nach alt</p>
+    </div>
+
+    <!--
+        =============================================
+        NEUE SESSION HINZUFÜGEN:
+        Kopiere einen ganzen <article class="feed-item">-Block
+        und füge ihn OBEN ein (neustes zuerst).
+        Ändere Datum, Titel, Text, Foto und Link.
+        =============================================
+    -->
+    <div class="alle-aufnahmen-feed">
+        <div class="feed">
+
+            <!-- SESSION: Christian Stocker bei PolEdu (neuste) -->
+            <article class="feed-item">
+                <div class="feed-image">
+                    <img src="bilder/sessions/session-politik-2/1M3A3845.jpg" alt="Christian Stocker bei PolEdu" loading="lazy" style="object-position: center 40%;">
+                </div>
+                <div class="feed-text">
+                    <span class="feed-date">20. April 2026</span>
+                    <h3 class="feed-title">Politik · Christian Stocker bei PolEdu</h3>
+                    <p class="feed-description">
+                        Schreib hier ein paar Sätze über diese Veranstaltung.
+                    </p>
+                    <a href="sessions/politik-2.html" class="feed-link">Alle Fotos ansehen →</a>
+                </div>
+            </article>
+
+            <!-- SESSION: Beate Meinl-Reisinger bei PolEdu -->
+            <article class="feed-item feed-item--reverse">
+                <div class="feed-image">
+                    <img src="bilder/sessions/session-politik-1/20260112_4545.jpg" alt="Beate Meinl-Reisinger bei PolEdu" loading="lazy">
+                </div>
+                <div class="feed-text">
+                    <span class="feed-date">12. Januar 2026</span>
+                    <h3 class="feed-title">Politik · Beate Meinl-Reisinger bei PolEdu</h3>
+                    <p class="feed-description">
+                        Schreib hier ein paar Sätze über diese Veranstaltung.
+                    </p>
+                    <a href="sessions/politik-1.html" class="feed-link">Alle Fotos ansehen →</a>
+                </div>
+            </article>
+
+            <!-- SESSION: Österreich Frauen vs. Slowenien Frauen -->
+            <article class="feed-item">
+                <div class="feed-image">
+                    <img src="bilder/sessions/session-fussball-1/1M3A0973.jpg" alt="Österreich Frauen vs. Slowenien Frauen" loading="lazy">
+                </div>
+                <div class="feed-text">
+                    <span class="feed-date">5. Juni 2025</span>
+                    <h3 class="feed-title">Fußball · Österreich Frauen vs. Slowenien Frauen</h3>
+                    <p class="feed-description">
+                        Wiener Sport-Club Platz. Schreib hier ein paar Sätze über dieses Spiel.
+                    </p>
+                    <a href="sessions/fussball-1.html" class="feed-link">Alle Fotos ansehen →</a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 smjk.photos</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
