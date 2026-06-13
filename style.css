@@ -159,13 +159,13 @@ a {
 /* Äußerer Container — leicht geneigt für den Kino-Look */
 .filmstrip {
     position: absolute;
-    /* etwas größer als der Hero damit die Ränder bei Rotation nicht sichtbar sind */
     inset: -8%;
     display: flex;
     flex-direction: column;
     gap: 4px;
     transform: rotate(-4deg) scale(1.08);
     transform-origin: center center;
+    contain: layout paint;
 }
 
 /* Eine horizontale Reihe */
@@ -184,9 +184,14 @@ a {
     width: max-content;
     height: 100%;
     animation: strip-left 38s linear infinite;
+    animation-play-state: paused;
     will-change: transform;
     transform: translateZ(0);
     backface-visibility: hidden;
+}
+
+.filmstrip.ready .strip-track {
+    animation-play-state: running;
 }
 
 /* Reihe 2 läuft in die Gegenrichtung */

@@ -141,6 +141,24 @@ document.querySelectorAll('.session-photo img').forEach(img => {
 });
 
 // ============================================================
+// FILMSTREIFEN — Animation startet erst wenn Bilder bereit sind
+// ============================================================
+(function () {
+    const filmstrip = document.querySelector('.filmstrip');
+    if (!filmstrip) return;
+    let gestartet = false;
+    function starten() {
+        if (gestartet) return;
+        gestartet = true;
+        filmstrip.classList.add('ready');
+    }
+    // Spätestens nach 1.5 Sekunden starten (auch wenn Bilder noch laden)
+    setTimeout(starten, 1500);
+    // Sofort starten wenn alle Seiten-Ressourcen geladen sind (z.B. aus Cache)
+    window.addEventListener('load', starten, { once: true });
+}());
+
+// ============================================================
 // SCROLL-ANIMATION — Abschnitte gleiten sanft rein beim Scrollen
 // ============================================================
 const animatableSelectors = [
