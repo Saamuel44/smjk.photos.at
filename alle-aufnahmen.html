@@ -36,82 +36,20 @@
 
     <!--
         =============================================
-        NEUE SESSION HINZUFÜGEN:
-        Kopiere einen ganzen <article class="feed-item">-Block
-        und füge ihn OBEN ein (neustes zuerst).
-        Ändere Datum, Titel, Text, Foto und Link.
+        Diese Liste füllt sich AUTOMATISCH aus sessions-data.js.
+        Neues Event? Trag es NUR in sessions-data.js ein –
+        Startseite und diese Seite aktualisieren sich dann beide selbst.
         =============================================
     -->
     <div class="alle-aufnahmen-feed">
-        <div class="feed">
-
-            <!-- SESSION: Christian Stocker bei PolEdu (neuste) -->
-            <article class="feed-item">
-                <div class="feed-image">
-                    <img src="bilder/sessions/session-politik-2/1M3A3845.jpg" alt="Christian Stocker bei PolEdu" loading="lazy" style="object-position: center 40%;">
-                </div>
-                <div class="feed-text">
-                    <span class="feed-date">20. April 2026</span>
-                    <h3 class="feed-title">Politik · Christian Stocker bei PolEdu</h3>
-                    <p class="feed-description">
-                        Schreib hier ein paar Sätze über diese Veranstaltung.
-                    </p>
-                    <a href="sessions/politik-2.html" class="feed-link">Alle Fotos ansehen →</a>
-                </div>
-            </article>
-
-            <!-- SESSION: Beate Meinl-Reisinger bei PolEdu -->
-            <article class="feed-item feed-item--reverse">
-                <div class="feed-image">
-                    <img src="bilder/sessions/session-politik-1/20260112_4545.jpg" alt="Beate Meinl-Reisinger bei PolEdu" loading="lazy">
-                </div>
-                <div class="feed-text">
-                    <span class="feed-date">12. Januar 2026</span>
-                    <h3 class="feed-title">Politik · Beate Meinl-Reisinger bei PolEdu</h3>
-                    <p class="feed-description">
-                        Schreib hier ein paar Sätze über diese Veranstaltung.
-                    </p>
-                    <a href="sessions/politik-1.html" class="feed-link">Alle Fotos ansehen →</a>
-                </div>
-            </article>
-
-            <!-- SESSION: Austria Wien – Donaufeld -->
-            <article class="feed-item">
-                <div class="feed-image">
-                    <img src="bilder/sessions/austriawien_donaufeld_10_01_2026/1M3A8342.jpg" alt="Austria Wien – Donaufeld" loading="lazy">
-                </div>
-                <div class="feed-text">
-                    <span class="feed-date">10. Jänner 2026</span>
-                    <h3 class="feed-title">Fußball · Austria Wien – Donaufeld</h3>
-                    <p class="feed-description">
-                        Testspiel – Austria Akademie – 5:1
-                    </p>
-                    <a href="sessions/austria-donaufeld-1.html" class="feed-link">Alle Fotos ansehen →</a>
-                </div>
-            </article>
-
-            <!-- SESSION: Österreich Frauen vs. Slowenien Frauen -->
-            <article class="feed-item feed-item--reverse">
-                <div class="feed-image">
-                    <img src="bilder/sessions/session-fussball-1/1M3A0973.jpg" alt="Österreich Frauen vs. Slowenien Frauen" loading="lazy">
-                </div>
-                <div class="feed-text">
-                    <span class="feed-date">5. Juni 2026</span>
-                    <h3 class="feed-title">Fußball · Österreich Frauen vs. Slowenien Frauen</h3>
-                    <p class="feed-description">
-                        Wiener Sport-Club Platz. Schreib hier ein paar Sätze über dieses Spiel.
-                    </p>
-                    <a href="sessions/fussball-1.html" class="feed-link">Alle Fotos ansehen →</a>
-                </div>
-            </article>
-
-        </div>
+        <div class="feed" data-feed></div>
     </div>
 
     <footer>
         <p>© 2026 smjk.photos</p>
     </footer>
 
+    <script src="sessions-data.js"></script>
     <script src="crop-data.js"></script>
     <script src="script.js"></script>
 </body>

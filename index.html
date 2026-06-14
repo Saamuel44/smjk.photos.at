@@ -184,62 +184,8 @@
             <h2 class="section-title">Neueste Aufnahmen</h2>
             <p class="section-subtitle">Was ich zuletzt fotografiert habe</p>
         </div>
-        <div class="feed">
-
-            <!-- SESSION: Christian Stocker bei PolEdu (April 2026) -->
-            <article class="feed-item">
-                <div class="feed-image">
-                    <!--
-                        BILDAUSSCHNITT ANPASSEN:
-                        Füge style="object-position: X Y;" hinzu um den Ausschnitt zu wählen.
-                        Beispiele:
-                          object-position: center top    → zeigt oberen Bereich
-                          object-position: center 20%    → 20% von oben
-                          object-position: center bottom → zeigt unteren Bereich
-                    -->
-                   <img src="bilder/sessions/session-politik-2/1M3A3845.jpg" alt="Christian Stocker bei PolEdu" loading="lazy" style="object-position:center 80%">
-                </div>
-                <div class="feed-text">
-                    <span class="feed-date">20. April 2026</span>
-                    <h3 class="feed-title">Politik · Christian Stocker bei PolEdu</h3>
-                    <p class="feed-description">
-                        Schreib hier ein paar Sätze über diese Veranstaltung.
-                    </p>
-                    <a href="sessions/politik-2.html" class="feed-link">Alle Fotos ansehen →</a>
-                </div>
-            </article>
-
-            <!-- SESSION: Beate Meinl-Reisinger bei PolEdu (Januar 2026) -->
-            <article class="feed-item feed-item--reverse">
-                <div class="feed-image">
-                    <img src="bilder/sessions/session-politik-1/20260112_4545.jpg" alt="Beate Meinl-Reisinger bei PolEdu" loading="lazy">
-                </div>
-                <div class="feed-text">
-                    <span class="feed-date">12. Januar 2026</span>
-                    <h3 class="feed-title">Politik · Beate Meinl-Reisinger bei PolEdu</h3>
-                    <p class="feed-description">
-                        Schreib hier ein paar Sätze über diese Veranstaltung.
-                    </p>
-                    <a href="sessions/politik-1.html" class="feed-link">Alle Fotos ansehen →</a>
-                </div>
-            </article>
-
-            <!-- SESSION: Österreich Frauen vs. Slowenien Frauen -->
-            <article class="feed-item">
-                <div class="feed-image">
-                    <img src="bilder/sessions/session-fussball-1/1M3A0504.jpg" alt="Österreich Frauen vs. Slowenien Frauen" loading="lazy">
-                </div>
-                <div class="feed-text">
-                    <span class="feed-date">5. Juni 2026</span>
-                    <h3 class="feed-title">Fußball · Österreich Frauen vs. Slowenien Frauen</h3>
-                    <p class="feed-description">
-                        Wiener Sport-Club Platz. Schreib hier ein paar Sätze über dieses Spiel.
-                    </p>
-                    <a href="sessions/fussball-1.html" class="feed-link">Alle Fotos ansehen →</a>
-                </div>
-            </article>
-
-        </div>
+        <!-- Wird automatisch aus sessions-data.js gefüllt (die 3 neuesten). Nicht von Hand bearbeiten. -->
+        <div class="feed" data-feed data-limit="3"></div>
 
         <!-- Link zur vollständigen Übersicht -->
         <div style="text-align: center; margin-top: 64px;">
@@ -346,6 +292,7 @@
         <img src="" alt="" id="lightbox-img">
     </div>
 
+    <script src="sessions-data.js"></script>
     <script src="crop-data.js"></script>
     <script src="script.js"></script>
 </body>

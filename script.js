@@ -30,6 +30,64 @@ if (hamburger) {
 }
 
 // ============================================================
+// AUFNAHMEN-FEED — wird aus sessions-data.js automatisch erzeugt
+// Eine Liste (window.SESSIONS) speist BEIDE Listen:
+//   - Container mit data-limit="3"  -> Startseite (3 neueste)
+//   - Container ohne data-limit      -> "Alle Aufnahmen" (alle)
+// Sortierung (neueste oben) und Zickzack-Layout passieren automatisch.
+// ============================================================
+(function () {
+    const feeds = document.querySelectorAll('.feed[data-feed]');
+    if (feeds.length === 0) return;                 // Seite ohne Feed (z.B. Session-Detailseite)
+    const sessions = (window.SESSIONS || []).slice()
+        .sort((a, b) => b.date.localeCompare(a.date)); // neu -> alt (JJJJ-MM-TT vergleichbar)
+
+    function baueKarte(s, i) {
+        const article = document.createElement('article');
+        article.className = 'feed-item' + (i % 2 === 1 ? ' feed-item--reverse' : '');
+
+        const bildBox = document.createElement('div');
+        bildBox.className = 'feed-image';
+        const img = document.createElement('img');
+        img.src = s.image;
+        img.alt = s.title;
+        img.loading = 'lazy';
+        if (s.imagePos) img.style.objectPosition = s.imagePos; // sonst übernimmt der Auto-Ausschnitt
+        bildBox.appendChild(img);
+
+        const textBox = document.createElement('div');
+        textBox.className = 'feed-text';
+
+        const datum = document.createElement('span');
+        datum.className = 'feed-date';
+        datum.textContent = s.dateText;
+
+        const titel = document.createElement('h3');
+        titel.className = 'feed-title';
+        titel.textContent = (s.category ? s.category + ' · ' : '') + s.title;
+
+        const text = document.createElement('p');
+        text.className = 'feed-description';
+        text.textContent = s.description;
+
+        const link = document.createElement('a');
+        link.className = 'feed-link';
+        link.href = s.link;
+        link.textContent = 'Alle Fotos ansehen →';
+
+        textBox.append(datum, titel, text, link);
+        article.append(bildBox, textBox);
+        return article;
+    }
+
+    feeds.forEach(feed => {
+        const limit = feed.dataset.limit ? parseInt(feed.dataset.limit, 10) : sessions.length;
+        feed.innerHTML = '';
+        sessions.slice(0, limit).forEach((s, i) => feed.appendChild(baueKarte(s, i)));
+    });
+}());
+
+// ============================================================
 // HERO — Automatischer Bildwechsel alle 5 Sekunden
 // ============================================================
 const slides = document.querySelectorAll('.slide');
