@@ -33,12 +33,31 @@ window.SESSIONS = [
     },
 
     {
+        date:        "2026-06-01",
+        dateText:    "1. Juni 2026",
+        title:       "Walter Rosenkranz bei PolEdu",
+        description: "PolEdu Podiumsdiskussion mit Walter Rosenkranz (FPÖ)",
+        image:       "bilder/sessions/rosenkranz_bei_poledu_01_06_2026/1M3A9920.jpg",
+        link:        "sessions/rosenkranz-1.html"
+    },
+
+    {
         date:        "2026-05-28",
         dateText:    "28. Mai 2026",
         title:       "Podiumsdiskussion: Neutralität",
         description: "Bei PolEdu diskutierten Christian Schandor (FPÖ) und Veit Dengler (NEOS) mit 100 Jugendlichen über Österreichs Neutralität.",
         image:       "bilder/sessions/neutralitaet_28_05_2026/1M3A9048.jpg",
         link:        "sessions/neutralitaet_28_05_2026.html",
+        wide:        true
+    },
+
+    {
+        date:        "2026-04-26",
+        dateText:    "26. April 2026",
+        title:       "Sturm - Austria Wien",
+        description: "Bundesliga 25/26 29. Runde - Merkur Arena - 1:1",
+        image:       "bilder/sessions/sturm_austriawien_26_04_2026/1M3A4645.jpg",
+        link:        "sessions/sturm-austria-1.html",
         wide:        true
     },
 
