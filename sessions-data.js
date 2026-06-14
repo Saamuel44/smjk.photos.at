@@ -63,6 +63,16 @@ window.SESSIONS = [
         image:       "bilder/sessions/austriawien_donaufeld_10_01_2026/1M3A8342.jpg",
         link:        "sessions/austria-donaufeld-1.html",
         wide:        true
-    }
+    },
 
+    {
+        date:        "2026-05-28",
+        dateText:    "28. Mai 2026",
+        category:    "Politik",
+        title:       "Podiumsdiskussion: Neutralität",
+        description: "Bei PolEdu diskutierten Christian Schandor (FPÖ) und Veit Dengler (NEOS) mit 100 Jugendlichen über Österreichs Neutralität.",
+        image:       "bilder/sessions/neutralität_28_05_2026/1M3A9048",
+        link:        "sessions/neutralität_28_05_2026",
+        wide:        true
+    },
 ];
