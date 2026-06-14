@@ -8,7 +8,9 @@
 // Daraus entstehen automatisch:
 //   - Startseite "Neueste Aufnahmen"  -> zeigt die 3 neuesten
 //   - Seite "Alle Aufnahmen"          -> zeigt alle
-//   - Galerie                          -> zeigt alle
+//   - Galerie                          -> zeigt alle (immer 2 nebeneinander;
+//                                         bei ungerader Anzahl wird das letzte
+//                                         Foto automatisch über die volle Breite)
 //
 // Felder:
 //   date        Sortier-Datum, IMMER im Format JJJJ-MM-TT (z.B. "2026-06-05")
@@ -18,7 +20,6 @@
 //   image       Vorschaubild (Pfad ab dem Hauptordner, IMMER mit .jpg am Ende!)
 //   imagePos    (optional) Bildausschnitt, z.B. "center 40%". Weglassen = automatisch.
 //   link        Link zur Detailseite der Session (IMMER mit .html am Ende!)
-//   wide        (optional) true = breite Karte in der Galerie (volle Reihe)
 // ============================================================
 window.SESSIONS = [
 
@@ -28,8 +29,7 @@ window.SESSIONS = [
         title:       "Österreich - Slowenien",
         description: "WM 2027 Qualifikation - Wiener Sport-Club Platz - 1:0",
         image:       "bilder/highlights/Kathi Naschenweng.jpg",
-        link:        "sessions/fussball-1.html",
-        wide:        true
+        link:        "sessions/fussball-1.html"
     },
 
     {
@@ -47,8 +47,7 @@ window.SESSIONS = [
         title:       "Podiumsdiskussion: Neutralität",
         description: "Bei PolEdu diskutierten Christian Schandor (FPÖ) und Veit Dengler (NEOS) mit 100 Jugendlichen über Österreichs Neutralität.",
         image:       "bilder/sessions/neutralitaet_28_05_2026/1M3A9048.jpg",
-        link:        "sessions/neutralitaet_28_05_2026.html",
-        wide:        true
+        link:        "sessions/neutralitaet_28_05_2026.html"
     },
 
     {
@@ -57,15 +56,14 @@ window.SESSIONS = [
         title:       "Sturm - Austria Wien",
         description: "Bundesliga 25/26 29. Runde - Merkur Arena - 1:1",
         image:       "bilder/sessions/sturm_austriawien_26_04_2026/1M3A4645.jpg",
-        link:        "sessions/sturm-austria-1.html",
-        wide:        true
+        link:        "sessions/sturm-austria-1.html"
     },
 
     {
         date:        "2026-04-20",
         dateText:    "20. April 2026",
         title:       "Christian Stocker bei PolEdu",
-        description: "Schreib hier ein paar Sätze über diese Veranstaltung.",
+        description: "PolEdu Podiumsdiskussion mit Christian Stocker (ÖVP)",
         image:       "bilder/sessions/session-politik-2/1M3A3845.jpg",
         imagePos:    "center 80%",
         link:        "sessions/politik-2.html"
@@ -77,15 +75,14 @@ window.SESSIONS = [
         title:       "Ried - Austria Wien",
         description: "Bundesliga 25/26 22. Runde - BWT Oberösterreichische Arena - 0:2",
         image:       "bilder/sessions/ried_austriawien_08_03_2026/1M3A2890.jpg",
-        link:        "sessions/ried-austria-1.html",
-        wide:        true
+        link:        "sessions/ried-austria-1.html"
     },
 
     {
         date:        "2026-01-12",
         dateText:    "12. Januar 2026",
         title:       "Beate Meinl-Reisinger bei PolEdu",
-        description: "Schreib hier ein paar Sätze über diese Veranstaltung.",
+        description: "PolEdu Podiumsdiskussion mit Beate Meinl-Reisinger (NEOS)",
         image:       "bilder/sessions/session-politik-1/20260112_4545.jpg",
         link:        "sessions/politik-1.html"
     },
@@ -97,8 +94,7 @@ window.SESSIONS = [
         description: "Testspiel – Austria Akademie – 5:1",
         image:       "bilder/sessions/austriawien_donaufeld_10_01_2026/1M3A8342.jpg",
         imagePos:    "center 20%",
-        link:        "sessions/austria-donaufeld-1.html",
-        wide:        true
+        link:        "sessions/austria-donaufeld-1.html"
     }
 
 ];

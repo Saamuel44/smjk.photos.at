@@ -90,7 +90,8 @@ if (hamburger) {
 // ============================================================
 // GALERIE — wird ebenfalls aus sessions-data.js erzeugt
 // Container: <div class="gallery-grid" data-gallery></div>
-// "wide: true" in der Session-Liste = breite Karte (volle Reihe).
+// Layout: immer 2 Karten nebeneinander. Nur wenn die Anzahl UNGERADE ist,
+// wird die letzte Karte über die volle Breite gezogen -> es geht immer auf.
 // Gleiche Liste wie der Feed -> ein Foto/Ausschnitt gilt überall.
 // ============================================================
 (function () {
@@ -98,11 +99,13 @@ if (hamburger) {
     if (!grid) return;
     const sessions = (window.SESSIONS || []).slice()
         .sort((a, b) => b.date.localeCompare(a.date)); // neu -> alt
+    const ungerade = sessions.length % 2 === 1;
 
     grid.innerHTML = '';
-    sessions.forEach(s => {
+    sessions.forEach((s, i) => {
+        const letztesUndUngerade = ungerade && (i === sessions.length - 1);
         const card = document.createElement('div');
-        card.className = 'gallery-card' + (s.wide ? ' gallery-card--wide' : '');
+        card.className = 'gallery-card' + (letztesUndUngerade ? ' gallery-card--wide' : '');
 
         const img = document.createElement('img');
         img.src = s.image;
