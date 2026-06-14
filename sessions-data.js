@@ -38,7 +38,7 @@ window.SESSIONS = [
         title:       "Christian Stocker bei PolEdu",
         description: "Schreib hier ein paar Sätze über diese Veranstaltung.",
         image:       "bilder/sessions/session-politik-2/1M3A3845.jpg",
-        imagePos:    "center 40%",
+        imagePos:    "center 80%",
         link:        "sessions/politik-2.html"
     },
 
