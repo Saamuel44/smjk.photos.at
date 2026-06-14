@@ -88,6 +88,45 @@ if (hamburger) {
 }());
 
 // ============================================================
+// GALERIE — wird ebenfalls aus sessions-data.js erzeugt
+// Container: <div class="gallery-grid" data-gallery></div>
+// "wide: true" in der Session-Liste = breite Karte (volle Reihe).
+// Gleiche Liste wie der Feed -> ein Foto/Ausschnitt gilt überall.
+// ============================================================
+(function () {
+    const grid = document.querySelector('.gallery-grid[data-gallery]');
+    if (!grid) return;
+    const sessions = (window.SESSIONS || []).slice()
+        .sort((a, b) => b.date.localeCompare(a.date)); // neu -> alt
+
+    grid.innerHTML = '';
+    sessions.forEach(s => {
+        const card = document.createElement('div');
+        card.className = 'gallery-card' + (s.wide ? ' gallery-card--wide' : '');
+
+        const img = document.createElement('img');
+        img.src = s.image;
+        img.alt = s.title;
+        img.loading = 'lazy';
+        if (s.imagePos) img.style.objectPosition = s.imagePos; // sonst Auto-Ausschnitt
+
+        const overlay = document.createElement('div');
+        overlay.className = 'gallery-card-overlay';
+        const titel = document.createElement('h3');
+        titel.className = 'gallery-card-title';
+        titel.textContent = s.title;
+        const btn = document.createElement('a');
+        btn.className = 'gallery-card-btn';
+        btn.href = s.link;
+        btn.textContent = 'Alle Fotos ansehen';
+        overlay.append(titel, btn);
+
+        card.append(img, overlay);
+        grid.appendChild(card);
+    });
+}());
+
+// ============================================================
 // HERO — Automatischer Bildwechsel alle 5 Sekunden
 // ============================================================
 const slides = document.querySelectorAll('.slide');

@@ -18,6 +18,7 @@
 //   image       Vorschaubild (Pfad ab dem Hauptordner)
 //   imagePos    (optional) Bildausschnitt, z.B. "center 40%". Weglassen = automatisch.
 //   link        Link zur Detailseite der Session
+//   wide        (optional) true = breite Karte in der Galerie (volle Reihe)
 // ============================================================
 window.SESSIONS = [
 
@@ -28,7 +29,8 @@ window.SESSIONS = [
         title:       "Österreich Frauen vs. Slowenien Frauen",
         description: "Wiener Sport-Club Platz. Schreib hier ein paar Sätze über dieses Spiel.",
         image:       "bilder/sessions/session-fussball-1/1M3A0504.jpg",
-        link:        "sessions/fussball-1.html"
+        link:        "sessions/fussball-1.html",
+        wide:        true
     },
 
     {
@@ -59,7 +61,8 @@ window.SESSIONS = [
         title:       "Austria Wien – Donaufeld",
         description: "Testspiel – Austria Akademie – 5:1",
         image:       "bilder/sessions/austriawien_donaufeld_10_01_2026/1M3A8342.jpg",
-        link:        "sessions/austria-donaufeld-1.html"
+        link:        "sessions/austria-donaufeld-1.html",
+        wide:        true
     }
 
 ];
