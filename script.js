@@ -141,6 +141,25 @@ document.querySelectorAll('.session-photo img').forEach(img => {
 });
 
 // ============================================================
+// AUTO-BILDAUSSCHNITT — setzt object-position nach erkanntem Motiv
+// Daten kommen aus crop-data.js (erzeugt von bildausschnitt-erkennen.bat).
+// Manuell im HTML gesetzte object-position-Werte bleiben unangetastet.
+// ============================================================
+(function () {
+    const map = window.CROP_DATA || {};
+    function dateiname(img) {
+        const src = img.getAttribute('src') || '';
+        try { return decodeURIComponent(src.split('/').pop()); }
+        catch (e) { return src.split('/').pop(); }
+    }
+    document.querySelectorAll('.session-photo img, .feed-image img, .gallery-card img').forEach(img => {
+        if (img.style.objectPosition) return;          // manueller Ausschnitt -> nicht überschreiben
+        const pos = map[dateiname(img)];
+        if (pos) img.style.objectPosition = 'center ' + pos;
+    });
+}());
+
+// ============================================================
 // FILMSTREIFEN — Animation startet erst wenn Bilder bereit sind
 // ============================================================
 (function () {
