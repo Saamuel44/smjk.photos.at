@@ -64,7 +64,7 @@ if (hamburger) {
 
         const titel = document.createElement('h3');
         titel.className = 'feed-title';
-        titel.textContent = (s.category ? s.category + ' · ' : '') + s.title;
+        titel.textContent = s.title;
 
         const text = document.createElement('p');
         text.className = 'feed-description';
