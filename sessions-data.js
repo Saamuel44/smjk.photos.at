@@ -53,6 +53,16 @@ window.SESSIONS = [
     },
 
     {
+        date:        "2026-03-08",
+        dateText:    "8. März 2026",
+        title:       "Ried - Austria Wien",
+        description: "Bundesliga 25/26 22. Runde - BWT Oberösterreichische Arena - 0:2",
+        image:       "bilder/sessions/ried_austriawien_08_03_2026/1M3A2890.jpg",
+        link:        "sessions/ried-austria-1.html",
+        wide:        true
+    },
+
+    {
         date:        "2026-01-12",
         dateText:    "12. Januar 2026",
         title:       "Beate Meinl-Reisinger bei PolEdu",
