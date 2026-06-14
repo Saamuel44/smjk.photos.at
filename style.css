@@ -591,10 +591,10 @@ a {
 }
 
 .about-text p {
-    font-size: 15px;
+    font-size: 17px;
     color: #444444;
     line-height: 1.9;
-    font-weight: 400; /* Roman */
+    font-weight: 500; /* Medium */
     margin-bottom: 16px;
 }
 
