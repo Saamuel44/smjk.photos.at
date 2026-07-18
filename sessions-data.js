@@ -24,6 +24,16 @@
 window.SESSIONS = [
 
     {
+        date:        "2026-07-17",
+        dateText:    "17. Juli 2026",
+        title:       "SV Ried - Rot-Weiss Essen",
+        description: "Testspiel - BWT Arena - 3:0",
+        image:       "bilder/sessions/ried_rwe_17_07_2026/Dardari.jpg",
+        imagePos:    "center 42%",
+        link:        "sessions/ried-rwe-1.html"
+    },
+
+    {
         date:        "2026-06-05",
         dateText:    "5. Juni 2026",
         title:       "Österreich - Slowenien",
