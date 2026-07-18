@@ -29,7 +29,7 @@ window.SESSIONS = [
         title:       "SV Ried - Rot-Weiss Essen",
         description: "Testspiel - BWT Arena - 3:0",
         image:       "bilder/sessions/ried_rwe_17_07_2026/Dardari.jpg",
-        imagePos:    "center 42%",
+        imagePos:    "center 58%",
         link:        "sessions/ried-rwe-1.html"
     },
 
