@@ -24,6 +24,15 @@
 window.SESSIONS = [
 
     {
+        date:        "2026-08-15",
+        dateText:    "15. August 2026",
+        title:       "Young Violets - Austria Salzburg",
+        description: "2. Liga - Franz Horr Stadion - 3:1",
+        image:       "bilder/sessions/yv_svas_15_08_2026/1M3A4226.jpg",
+        link:        "sessions/young-violets-1.html"
+    },
+
+    {
         date:        "2026-07-17",
         dateText:    "17. Juli 2026",
         title:       "SV Ried - Rot-Weiss Essen",
