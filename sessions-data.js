@@ -24,6 +24,15 @@
 window.SESSIONS = [
 
     {
+        date:        "2026-08-27",
+        dateText:    "27. August 2026",
+        title:       "PolEdu Summer School 2026",
+        description: "Vorträge von Anna Mair, Matthias Wasinger und Vito Cecere",
+        image:       "bilder/sessions/summer-school_27_08_2026/1M3A4988.jpg",
+        link:        "sessions/summer-school-1.html"
+    },
+
+    {
         date:        "2026-08-15",
         dateText:    "15. August 2026",
         title:       "Young Violets - Austria Salzburg",
