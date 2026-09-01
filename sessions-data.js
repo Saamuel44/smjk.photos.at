@@ -24,6 +24,15 @@
 window.SESSIONS = [
 
     {
+        date:        "2026-08-30",
+        dateText:    "30. August 2026",
+        title:       "Red Bull - Austria Wien",
+        description: "Bundesliga 5. Runde - Red Bull Arena - 4:1",
+        image:       "bilder/sessions/rb_austriawien_30_08_2026/1M3A5874.jpg",
+        link:        "sessions/red-bull-austria-1.html"
+    },
+
+    {
         date:        "2026-08-27",
         dateText:    "27. August 2026",
         title:       "PolEdu Summer School 2026",
