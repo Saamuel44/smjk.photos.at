@@ -24,6 +24,15 @@
 window.SESSIONS = [
 
     {
+        date:        "2026-09-19",
+        dateText:    "19. September 2026",
+        title:       "Grazer AK - Austria Wien",
+        description: "Bundesliga 7. Runde - Merkur Arena - 2:2",
+        image:       "bilder/sessions/grazerak_austriawien_19_09_2026/1M3A8163.jpg",
+        link:        "sessions/grazer-ak-austria-1.html"
+    },
+
+    {
         date:        "2026-08-30",
         dateText:    "30. August 2026",
         title:       "Red Bull - Austria Wien",
