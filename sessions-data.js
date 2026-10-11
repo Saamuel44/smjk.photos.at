@@ -24,6 +24,24 @@
 window.SESSIONS = [
 
     {
+        date:        "2026-10-11",
+        dateText:    "11. Oktober 2026",
+        title:       "Admira - Voitsberg",
+        description: "Liga Zwa 9. Runde - Bundesstadion Südstadt - 3:2",
+        image:       "bilder/sessions/admira_voitsberg_11_10_2026/1M3A0886.jpg",
+        link:        "sessions/admira-voitsberg-1.html"
+    },
+
+    {
+        date:        "2026-10-10",
+        dateText:    "10. Oktober 2026",
+        title:       "Austria Wien - Sturm Graz",
+        description: "Bundesliga 9. Runde - Franz Horr Stadion - 0:2",
+        image:       "bilder/sessions/austriawien_sturm_10_10_2026/1M3A9305.jpg",
+        link:        "sessions/austria-sturm-1.html"
+    },
+
+    {
         date:        "2026-09-19",
         dateText:    "19. September 2026",
         title:       "Grazer AK - Austria Wien",
