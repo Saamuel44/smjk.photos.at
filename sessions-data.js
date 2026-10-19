@@ -24,6 +24,16 @@
 window.SESSIONS = [
 
     {
+        date:        "2026-10-17",
+        dateText:    "17. Oktober 2026",
+        title:       "SV Ried - Austria Wien",
+        description: "Bundesliga 10. Runde - BWT Arena - 3:2",
+        image:       "bilder/sessions/ried_austriawien_17_10_2026/1M3A1430.jpg",
+        imagePos:    "center 28%",
+        link:        "sessions/sv-ried-austria-1.html"
+    },
+
+    {
         date:        "2026-10-11",
         dateText:    "11. Oktober 2026",
         title:       "Admira - Voitsberg",
