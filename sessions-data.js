@@ -24,6 +24,15 @@
 window.SESSIONS = [
 
     {
+        date:        "2026-10-23",
+        dateText:    "23. Oktober 2026",
+        title:       "Altach - Austria Wien",
+        description: "Bundesliga 11. Runde - Schnabelholz Stadion - 2:1",
+        image:       "bilder/sessions/altach_austriawien_23_10_2026/1M3A2605.jpg",
+        link:        "sessions/altach-austria-1.html"
+    },
+
+    {
         date:        "2026-10-17",
         dateText:    "17. Oktober 2026",
         title:       "SV Ried - Austria Wien",
