@@ -24,6 +24,15 @@
 window.SESSIONS = [
 
     {
+        date:        "2026-10-27",
+        dateText:    "27. Oktober 2026",
+        title:       "Austria Wien - Hartberg",
+        description: "ÖFB Cup Achtelfinale - Franz Horr Stadion - 1:1",
+        image:       "bilder/sessions/austriawien_hartberg_27_10_2026/1M3A7772.jpg",
+        link:        "sessions/austria-hartberg-1.html"
+    },
+
+    {
         date:        "2026-10-23",
         dateText:    "23. Oktober 2026",
         title:       "Altach - Austria Wien",
