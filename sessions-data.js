@@ -24,6 +24,25 @@
 window.SESSIONS = [
 
     {
+        date:        "2026-11-01",
+        dateText:    "1. November 2026",
+        title:       "Austria Wien - Rapid",
+        description: "Bundesliga 11. Runde - Franz Horr Stadion - 0:2",
+        image:       "bilder/sessions/austriawien_rapid_1_11_2026/1M3A1660.jpg",
+        imagePos:    "center 33%",
+        link:        "sessions/austria-rapid-1.html"
+    },
+
+    {
+        date:        "2026-10-31",
+        dateText:    "31. Oktober 2026",
+        title:       "Wacker Innsbruck - Young Violets",
+        description: "2. Liga 11. Runde - Tivoli - 1:2",
+        image:       "bilder/sessions/wacker_yv_31_10_2026/1M3A0070.jpg",
+        link:        "sessions/wacker-yv-1.html"
+    },
+
+    {
         date:        "2026-10-27",
         dateText:    "27. Oktober 2026",
         title:       "Austria Wien - Hartberg",
@@ -36,7 +55,7 @@ window.SESSIONS = [
         date:        "2026-10-23",
         dateText:    "23. Oktober 2026",
         title:       "Altach - Austria Wien",
-        description: "Bundesliga 11. Runde - Schnabelholz Stadion - 2:1",
+        description: "Bundesliga 10. Runde - Schnabelholz Stadion - 2:1",
         image:       "bilder/sessions/altach_austriawien_23_10_2026/1M3A2605.jpg",
         link:        "sessions/altach-austria-1.html"
     },
