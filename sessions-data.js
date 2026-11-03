@@ -24,6 +24,16 @@
 window.SESSIONS = [
 
     {
+        date:        "2026-11-02",
+        dateText:    "2. November 2026",
+        title:       "PolEdu trifft Andreas Babler",
+        description: "Podiumsdiskussion mit Andreas Babler - Presseclub Concordia",
+        image:       "bilder/sessions/andreasbabler_3_11_2026/1M3A2040.jpg",
+        imagePos:    "center 18%",
+        link:        "sessions/andreas-babler-1.html"
+    },
+
+    {
         date:        "2026-11-01",
         dateText:    "1. November 2026",
         title:       "Austria Wien - Rapid",
