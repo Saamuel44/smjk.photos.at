@@ -24,6 +24,15 @@
 window.SESSIONS = [
 
     {
+        date:        "2026-11-08",
+        dateText:    "8. November 2026",
+        title:       "WSG - Austria Wien",
+        description: "Bundesliga 12. Runde - Tivoli - 1:1",
+        image:       "bilder/sessions/wsg_austriawien_8_11_2026/1M3A3802.jpg",
+        link:        "sessions/wsg-austria-1.html"
+    },
+
+    {
         date:        "2026-11-02",
         dateText:    "2. November 2026",
         title:       "PolEdu trifft Andreas Babler",
