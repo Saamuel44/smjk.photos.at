@@ -24,6 +24,33 @@
 window.SESSIONS = [
 
     {
+        date:        "2026-11-22",
+        dateText:    "22. November 2026",
+        title:       "Austria Wien - Red Bull",
+        description: "Bundesliga 13. Runde - Franz Horr Stadion - 1:0",
+        image:       "bilder/sessions/austriawien_rb_22_11_2026/1M3A9954.jpg",
+        link:        "sessions/austria-redbull-1.html"
+    },
+
+    {
+        date:        "2026-11-20",
+        dateText:    "20. November 2026",
+        title:       "FAC - Young Violets",
+        description: "2. Liga 13. Runde - FAC Platz - 3:1",
+        image:       "bilder/sessions/fac_youngviolets_20_11_2026/1M3A8734.jpg",
+        link:        "sessions/fac-yv-1.html"
+    },
+
+    {
+        date:        "2026-11-19",
+        dateText:    "19. November 2026",
+        title:       "Austria Wien - FC Bayern",
+        description: "Women's Champions League 5. Spieltag - Franz Horr Stadion - 0:4",
+        image:       "bilder/sessions/fak_bayern_19_11_2026/1M3A5511.jpg",
+        link:        "sessions/austria-bayern-1.html"
+    },
+
+    {
         date:        "2026-11-08",
         dateText:    "8. November 2026",
         title:       "WSG - Austria Wien",
